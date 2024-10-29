@@ -75,4 +75,3 @@ In the project directory, you can run:
 
 ## Key Files and Functions
 - **App.js**: Contains the main UI logic and components for switching between views, generating/verifying signatures, and sharing keys.
-- **sha.js**: Ed25519 digital signature logic using the `@noble/ed25519` library.
