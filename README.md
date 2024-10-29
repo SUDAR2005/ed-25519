@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Ed25519 Signature System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project provides a simple web interface for generating and verifying digital signatures using the Ed25519 algorithm. The app allows users to generate key pairs, sign messages, verify signatures, and download/share keys.
 
-## Available Scripts
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- 
+## Project Overview
 
+The Ed25519 Signature System is a web-based application that implements digital signature functionality with the Ed25519 algorithm. Users can securely generate keys, sign messages, and verify signatures, which are fundamental operations in modern cryptography for authentication and data integrity.
+
+## Features
+- **Key Generation**: Generate Ed25519 public and private keys.
+- **Signature Generation**: Sign a custom message using a generated private key.
+- **Signature Verification**: Verify the authenticity of a signature given the public key, message, and signature.
+- **Key Download**: Download generated keys for offline storage.
+- **Share Key**: Share public keys through WhatsApp or Discord.
+- **Dark/Light Theme Toggle**: Switch between dark and light modes.
+
+## Tech Stack
+- **React** for building the frontend UI
+- **@noble/ed25519** for Ed25519 digital signatures
+- **@noble/hashes/sha512** for SHA-512 hashing
+
+## Installation
+
+### Prerequisites
+Ensure you have Node.js and npm installed.
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/ed25519-signature-system.git
+   cd ed25519-signature-system
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+## Usage
+
+1. **Start the Development Server**
+   ```bash
+   npm start
+   ```
+
+2. **Open the App**
+   Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
+
+### Available Scripts
 In the project directory, you can run:
+- **`npm start`**: Runs the app in the development mode.
+- **`npm run build`**: Builds the app for production to the `build` folder.
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+.
+├── public                 # Public assets
+├── src
+│   ├── components         # UI components
+│   ├── App.js             # Main app component
+│   ├── index.js           # Entry point for React
+│   └── sha.js             # Ed25519 signature logic
+├── .gitignore
+├── package.json           # Project configuration and dependencies
+└── README.md              # Project documentation
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Key Files and Functions
+- **App.js**: Contains the main UI logic and components for switching between views, generating/verifying signatures, and sharing keys.
+- **sha.js**: Ed25519 digital signature logic using the `@noble/ed25519` library.
