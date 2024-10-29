@@ -9,7 +9,7 @@ This project provides a simple web interface for generating and verifying digita
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
-- 
+
 ## Project Overview
 
 The Ed25519 Signature System is a web-based application that implements digital signature functionality with the Ed25519 algorithm. Users can securely generate keys, sign messages, and verify signatures, which are fundamental operations in modern cryptography for authentication and data integrity.
